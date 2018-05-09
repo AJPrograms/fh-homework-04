@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FhHomework02</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <%= form_tag(books_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
+          <%= submit_tag "Search", :name => nil %>
+        <% end %>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
