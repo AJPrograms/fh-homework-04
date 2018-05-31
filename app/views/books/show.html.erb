@@ -6,11 +6,6 @@
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
-
-<p>
   <strong>Classification:</strong>
   <%= @book.classification %>
 </p>
@@ -28,6 +23,13 @@
 <p>
   <strong>Year:</strong>
   <%= @book.year %>
+</p>
+
+<p>
+  <strong>Author(s):</strong><br/>
+  <% @book.authors.each do |author| %>
+    <%= link_to author.full_name, author %><br/>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |

@@ -15,5 +15,12 @@
   <%= @author.age %>
 </p>
 
+<p>
+  <strong>Book(s):</strong><br/>
+  <% @author.books.each do |book| %>
+    <%= link_to book.title, book %><br/>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>
